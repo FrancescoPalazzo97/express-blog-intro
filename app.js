@@ -2,7 +2,7 @@ const express = require(`express`);
 const app = express();
 const port = 3000;
 
-app.use(`/img`, express.static(`public`));
+app.use(express.static(`public`));
 
 app.get('/', (req, res) => {
     res.send(`Server del mio blog`);
@@ -43,8 +43,7 @@ app.get(`/bacheca`, (req, res) => {
         }
     ];
 
-    // res.json(posts);
-    res.send(`<img src="${posts[0].img}">`)
+    res.json(posts);
 
 })
 
